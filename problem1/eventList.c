@@ -19,18 +19,7 @@ void DestroyEventList(EventList *this)
 
 Event *SearchEvent(EventList *this, char *name)
 {
-    Event *crrntEvnt = this->head;
-    if (this->isEmpty == 0)
-    {
-        while (crrntEvnt != NULL)
-        {
-            if (strcmp(name, crrntEvnt->eventName)==0)
-            return crrntEvnt;
-            crrntEvnt = crrntEvnt->next;
-        }
-    }
-    crrntEvnt = NULL;
-    return crrntEvnt;
+   
 }
 
 void AddEvent(EventList *this, Event *event)
