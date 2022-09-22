@@ -34,15 +34,15 @@ void AddEvent(EventList *this, Event *event)
         currntEvnt = currntEvnt->next;
     }
     
-    if(this->isEmpty == 1)
+    if(this->isEmpty == 0)
     {
-        this->isEmpty = 0;
-        this->head = event;
+        this->last->next = event;
         this->last = event;
     }
     else
     {
-        this->last->next = event;
+        this->isEmpty = 1;
+        this->head = event;
         this->last = event;
     }
 }
