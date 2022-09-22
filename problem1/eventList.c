@@ -31,6 +31,8 @@ void AddEvent(EventList *this, Event *event)
             return;
             this->head = this->head->next;
         }
+
+        this->head = this->head->next;
     }
     
     if(this->isEmpty == 1)
