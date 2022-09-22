@@ -24,11 +24,20 @@ Event *SearchEvent(EventList *this, char *name)
 
 void AddEvent(EventList *this, Event *event)
 {
-
+    Event *event = malloc(sizeof(Event));
+    event->eventName;
+    event->next = NULL;
+    if(this->isEmpty = 1)
+    {
+        this->isEmpty = 0;
+        this->head = event;
+        this->last = event;
+    }
 }
 
 void RemoveEvent(EventList *this, char *name)
 {
+
 }
 
 void ListEvents(EventList *this)
