@@ -86,6 +86,18 @@ void RemoveEvent(EventList *this, char *name)
 
 void ListEvents(EventList *this)
 {
-    //if empty
-    printf("empty\n");
+   if(this->isEmpty == 0)
+    {
+        Event *eventoActual = this->head;
+
+        while (eventoActual != NULL)
+        {
+            printf("%s\n", eventoActual->eventName);
+            eventoActual = eventoActual->next;
+        }       
+    }
+    else
+    {
+        printf("empty\n");
+    }
 }
