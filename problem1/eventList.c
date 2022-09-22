@@ -24,32 +24,31 @@ Event *SearchEvent(EventList *this, char *name)
 
 void AddEvent(EventList *this, Event *event)
 {
-    Event *currntEvnt = this->head;
-    while (currntEvnt != NULL)
+     Event *crrntEvnt = this->head;
+    while (crrntEvnt != NULL)
     {
-        if(strcmp(event->eventName, currntEvnt->eventName)== 0)
-        {
-            return;
-        }
-        currntEvnt = currntEvnt->next;
+        if(strcmp(event->eventName, crrntEvnt->eventName) == 0)
+        return;
+
+        crrntEvnt = crrntEvnt->next;
     }
     
-    if(this->isEmpty == 0)
-    {
+   if(this->isEmpty == 0)
+   {
         this->last->next = event;
-        this->last = event;
-    }
-    else
-    {
-        this->isEmpty = 1;
-        this->head = event;
-        this->last = event;
-    }
+        this->last=event;
+   }
+   else
+   {
+       this->head = event;
+       this->last = event;
+       this->isEmpty = 0;    
+   }
 }
 
 void RemoveEvent(EventList *this, char *name)
 {
-
+    if
 }
 
 void ListEvents(EventList *this)
