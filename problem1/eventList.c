@@ -48,7 +48,7 @@ void AddEvent(EventList *this, Event *event)
 
 void RemoveEvent(EventList *this, char *name)
 {
-    if
+    
 }
 
 void ListEvents(EventList *this)
