@@ -14,7 +14,7 @@ EventList *CreateEventList(void)
 
 void DestroyEventList(EventList *this)
 {
-    
+    free(this);
 }
 
 Event *SearchEvent(EventList *this, char *name)
@@ -24,15 +24,16 @@ Event *SearchEvent(EventList *this, char *name)
 
 void AddEvent(EventList *this, Event *event)
 {
-    if(this->isEmpty = 1)
+    if(this->isEmpty == 1)
     {
         this->isEmpty = 0;
-        this->head = event->eventName;
-        this->last = event->eventName;
+        this->head = event;
+        this->last = event;
     }
     else
     {
-        char ;
+        this->last->next = event;
+        this->last = event;
     }
 }
 
@@ -43,5 +44,6 @@ void RemoveEvent(EventList *this, char *name)
 
 void ListEvents(EventList *this)
 {
-
+    //if empty
+    printf("empty\n");
 }
