@@ -2,7 +2,7 @@
 
 ## Equipo: Vertices dobles
 
-# Enunciado:
+## Enunciado:
 
 Una estructura de datos típica en la solución de problemas de entretenimiento digital es la LISTA. Se va a proponer un proyecto que hace uso de LISTAS; sin embargo, el proyecto está INCOMPLETO. La misión será completar el proyecto y pasar todos los vectores de prueba. Una vez terminada la solución se debe estudiar detenidamente para preparar la sustentación. Dicha sustentación será una pregunta relacionada con el proyecto.
 
