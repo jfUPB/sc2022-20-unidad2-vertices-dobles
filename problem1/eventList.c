@@ -37,8 +37,7 @@ void AddEvent(EventList *this, Event *event)
 {    
      while(strcmp(event->eventName, this->head->eventName)==1)
      {
-
-
+         this->head = this->head->next;
      }
 
      if(this->isEmpty == 0)
