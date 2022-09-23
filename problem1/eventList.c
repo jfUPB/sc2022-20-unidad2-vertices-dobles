@@ -35,7 +35,7 @@ Event *SearchEvent(EventList *this, char *name)
 
 void AddEvent(EventList *this, Event *event)
 {    
-     while(strcmp(name, this->head->eventName)==1)
+     while(strcmp(event->eventName, this->head->eventName)==1)
      {
 
 
@@ -58,7 +58,7 @@ void RemoveEvent(EventList *this, char *name)
 {
     if (this->isEmpty == 0)
     {
-         Event *crntEvent = this->head->next;  //USAMOS DOS EVENTOS PARA UBICARNOS EN EL ACTUAL Y ANTERIOR PARA MANEJAR MEJOR LA ELMINACION DE EVENTOS.
+         Event *crntEvent = this->head->next;
          Event *lstEvent = this->head;
          if(strcmp(name, lstEvent->eventName)==0)
          {
