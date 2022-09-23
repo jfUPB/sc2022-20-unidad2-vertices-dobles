@@ -35,26 +35,27 @@ Event *SearchEvent(EventList *this, char *name)
 
 void AddEvent(EventList *this, Event *event)
 {
-    Event *crntEvent = this->head;
-    while (crntEvent != NULL)
-    {
-        if(strcmp(event->eventName, crntEvent->eventName) == 0)
-        return;
-
-        crntEvent = crntEvent->next;
-    }
+     Event *crntEvent = this->head;
+     if(crntEvent != NULL)
+     {
+         if(strcmp(event->eventName, crntEvent->eventName) == 0)
+         {
+             return;
+             crntEvent = crntEvent->next;
+         }
+     }
     
-   if(this->isEmpty == 0)
-   {
-        this->last->next = event;
-        this->last=event;
-   }
-   else
-   {
-       this->head = event;
-       this->last = event;
-       this->isEmpty = 0;    
-   }
+     if(this->isEmpty == 0)
+     {
+          this->last->next = event;
+          this->last=event;
+     }
+     else
+     {
+         this->head = event;
+         this->last = event;
+         this->isEmpty = 0;    
+     }
 }
 
 void RemoveEvent(EventList *this, char *name)
@@ -62,34 +63,34 @@ void RemoveEvent(EventList *this, char *name)
     if (this->isEmpty == 0)
     {
          Event *crntEvent = this->head->next;  //USAMOS DOS EVENTOS PARA UBICARNOS EN EL ACTUAL Y ANTERIOR PARA MANEJAR MEJOR LA ELMINACION DE EVENTOS.
-         Event *eventoAnterior = this->head;
-         if(strcmp(name, eventoAnterior->eventName)==0)
+         Event *lstEvent = this->head;
+         if(strcmp(name, lstEvent->eventName)==0)
          {
-              if(eventoAnterior->next == NULL)
+              if(lstEvent->next == NULL)
               {
                     this->head = NULL;
                     this->last = NULL;
                     this->isEmpty = 1;
-                    DestroyEvent(eventoAnterior);
+                    DestroyEvent(lstEvent);
               }
               else
               {
                     this->head=crntEvent;
-                    DestroyEvent(eventoAnterior);
+                    DestroyEvent(lstEvent);
               }
          }
          while (crntEvent != NULL)
          {
               if(strcmp(name, crntEvent->eventName)==0)
               {
-                   eventoAnterior->next = crntEvent->next;
+                   lstEvent->next = crntEvent->next;
                    if (this->last->next == NULL)
                    {
-                        this->last = eventoAnterior;
+                        this->last = lstEvent;
                         DestroyEvent(crntEvent);
                    }
               }
-              eventoAnterior = crntEvent;
+              lstEvent = crntEvent;
               crntEvent = crntEvent->next;
          }
     }
@@ -97,10 +98,10 @@ void RemoveEvent(EventList *this, char *name)
 
 void ListEvents(EventList *this)
 {
-    if (this->isEmpty == 0)
+    ListEvent *givenList = this->isEmpty;
+    if (givenList == 0)
     {
         Event *crntEvent = this->head;
-
         while (crntEvent != NULL)
         {
             printf("%s\n", crntEvent->eventName);
