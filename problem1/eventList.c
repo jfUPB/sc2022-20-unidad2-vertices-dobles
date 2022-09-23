@@ -24,7 +24,7 @@ Event *SearchEvent(EventList *this, char *name)
 
 void AddEvent(EventList *this, Event *event)
 {
-     Event *crrntEvnt = this->head;
+    Event *crrntEvnt = this->head;
     while (crrntEvnt != NULL)
     {
         if(strcmp(event->eventName, crrntEvnt->eventName) == 0)
@@ -33,37 +33,37 @@ void AddEvent(EventList *this, Event *event)
         crrntEvnt = crrntEvnt->next;
     }
     
-   if(this->isEmpty == 0)
-   {
-        this->last->next = event;
-        this->last=event;
-   }
-   else
-   {
-       this->head = event;
-       this->last = event;
-       this->isEmpty = 0;    
-   }
+    if(this->isEmpty == 0)
+    {
+            this->last->next = event;
+            this->last=event;
+    }
+    else
+    {
+           this->head = event;
+           this->last = event;
+           this->isEmpty = 0;    
+    }
 }
 
 void RemoveEvent(EventList *this, char *name)
 {
+    EventList *listHead = this->head;
     if (this->isEmpty == 0)
     {
-       Event *crrntEvnt = this->head->next;
-       Event *lstEvnt = this->head;
+       Event *crrntEvnt = listHead->next;
        if(strcmp(name, lstEvnt->eventName)==0)
        {
             if(lstEvnt->next == NULL)
             {
-                this->head = NULL;
+                listHead = NULL;
                 this->last = NULL;
                 this->isEmpty = 1;
                 DestroyEvent(lstEvnt);
             }
             else
             {
-                this->head=crrntEvnt;
+                listHead=crrntEvnt;
                 DestroyEvent(lstEvnt);
             }
        }
