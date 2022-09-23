@@ -10,9 +10,9 @@ Una estructura de datos típica en la solución de problemas de entretenimiento 
 
 - No usar ninguna función para imprimir en pantalla a menos que sean las que ya están en el código o donde se pide que se usen. En la función ListEvents se deberá imprimir cada evento usando la cadena formateada "%s\n" y en caso de tener una lista vacía usar esta función printf("empty\n");. La razón de esto es que el programa será verificado automáticamente y por tanto, si se imprime información no esperada es posible que las pruebas automáticas fallen.
 
--Para compilar, cámbiate el directorio donde están los archivos .c y ejecuta el comando make. Ten en cuanta que con el comando make clean puedes limpiar todos los archivos compilados y luego con make volver a generarlos.
+- Para compilar, cámbiate el directorio donde están los archivos .c y ejecuta el comando make. Ten en cuanta que con el comando make clean puedes limpiar todos los archivos compilados y luego con make volver a generarlos.
 
--Verificar que se esta usando correctamente la memoria dinámica. Para ello instalar valgrind y luego realizar la verificación. 
+- Verificar que se esta usando correctamente la memoria dinámica. Para ello instalar valgrind y luego realizar la verificación. 
 
 ## Criterio de evaluación
 
