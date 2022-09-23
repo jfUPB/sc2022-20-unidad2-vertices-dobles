@@ -35,8 +35,11 @@ Event *SearchEvent(EventList *this, char *name)
 
 void AddEvent(EventList *this, Event *event)
 {    
-     while(strcmp(event->eventName, this->head->eventName)==1)
+     while (this->head != NULL)
      {
+         if(strcmp(event->eventName, this->head->eventName) == 0)
+         return;
+
          this->head = this->head->next;
      }
 
